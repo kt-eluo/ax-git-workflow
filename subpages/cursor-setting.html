@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧩 Cursor AI 기본 세팅 가이드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common/css/style.css">
+    <link rel="stylesheet" href="common/css/reset.css">        
+    <script src="../common/js/common.js"></script>
+</head>
+<body class="page-setting">
+  <div class="container">
+    <h1>🧩 Cursor AI 기본 세팅 가이드</h1>
+    <div class="subtitle">처음 시작하는 분들을 위한 실전 세팅 & 활용법</div>
+
+    <div class="guide-section">
+      <h2>01. 시작하기</h2>
+      <ul>
+        <li><strong>Cursor Setting</strong> 접속<br>→ 좌측 하단 또는 명령어 팔레트(<span class="label">Ctrl + Shift + P</span>)에서 "Cursor Settings" 검색 후 진입</li>
+      </ul>
+      <div class="img">
+        <img src="../images/image01.png" alt="">
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2>02. 추천 AI 모델</h2>
+      <ul>
+        <li><strong>Claude 최신 모델</strong> 추천<br>→ 더 자연스럽고 긴 코드 이해에 강함</li>
+      </ul>
+    </div>
+
+    <div class="guide-section">
+      <h2>03. 확장 프로그램 설치 & 단축키 안내</h2>
+      <div class="card-list">
+        <div class="card">
+          <strong>사이드바 열기</strong><br>
+          <span class="label">Ctrl + B</span>
+        </div>
+        <div class="card">
+          <strong>확장 탭 열기</strong><br>
+          <span class="label">Ctrl + Shift + X</span>
+        </div>
+      </div>
+      <div class="tip">✅ <strong>추천 확장 프로그램</strong></div>
+      <div class="card-list">
+        <div class="card">
+            <div class="img">
+                <img src="../images/image04.png" alt="" style="width: 60px; height: 60px;">
+            </div>
+          <strong>Live Server</strong><br>
+          <ul>
+            <li>HTML/CSS/JS 수정 시 브라우저 자동 새로고침</li>
+            <li>하단 포트 영역 클릭으로 실행</li>
+          </ul>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="../images/image05.png" alt="" style="width: 60px; height: 60px;">
+            </div>
+          <strong>ftp-simple</strong><br>
+          <ul>
+            <li>FTP 서버와 VS Code 직접 연결</li>
+            <li>FileZilla 없이 서버 파일 열기/수정 가능</li>
+          </ul>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="../images/image06.png" alt="" style="width: 60px; height: 60px;">
+            </div>
+          <strong>Live Sass Compiler</strong><br>
+          <ul>
+            <li>SCSS/SASS 파일을 실시간으로 CSS로 자동 컴파일</li>
+          </ul>
+        </div>
+        <div class="card">
+            <div class="img">
+                <img src="../images/image07.png" alt="" style="width: 60px; height: 60px;">
+            </div>
+          <strong>Mithrill Emmet</strong><br>
+          <ul>
+            <li>Mithril.js 스타일 Emmet 문법 자동완성 지원</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section">
+      <h2>04. 주요 단축키 정리</h2>
+      <div class="tip">🔧 <strong>기본 기능 관련</strong></div>
+      <table class="shortcut-table">
+        <thead>
+          <tr><th>기능</th><th>단축키</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>사이드바 열기/닫기</td><td><span class="label">Ctrl + B</span></td></tr>
+          <tr><td>버전 관리(Source Control)</td><td><span class="label">Ctrl + Shift + G</span></td></tr>
+          <tr><td>확장 기능(Extensions)</td><td><span class="label">Ctrl + Shift + X</span></td></tr>
+          <tr><td>디버그(Run and Debug)</td><td><span class="label">Ctrl + Shift + D</span></td></tr>
+        </tbody>
+      </table>
+      <div class="tip">🤖 <strong>AI 관련 단축키</strong></div>
+      <table class="shortcut-table">
+        <thead>
+          <tr><th>기능</th><th>단축키</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ask AI 창 열기</td><td><span class="label">Ctrl + I</span></td></tr>
+          <tr><td>선택 영역 수정 요청</td><td><span class="label">Ctrl + Shift + I</span></td></tr>
+          <tr><td>코드 설명 요청</td><td><span class="label">Ctrl + Shift + /</span></td></tr>
+          <tr><td>리팩토링 / 코드 생성 요청</td><td><span class="label">Ctrl + Alt + I</span></td></tr>
+          <tr><td>AI 자동완성 트리거</td><td><span class="label">Ctrl + Shift + Space</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="guide-section">
+      <h2>05. Cursor 업데이트 관련 주요 설정</h2>
+      <div class="card-list">
+        <div class="card">
+          <strong>🔄 Auto-Run 관련</strong>
+          <ul>
+            <li>Auto-Run Mode: 사용자 승인 없이 명령 실행 가능</li>
+            <li>Command Allowlist / Denylist: 특정 명령 실행 허용 또는 차단</li>
+            <li>File-Deletion Protection: 자동 파일 삭제 방지</li>
+            <li>MCP Tools Protection: MCP 도구 자동 실행 차단</li>
+            <li>Dotfile Protection: .gitignore 등 설정 파일 보호</li>
+            <li>External-File Protection: 워크스페이스 외부 파일 자동 변경 차단</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>☁️ Background Agents (Beta)</strong>
+          <ul>
+            <li>Git 저장소 내에서 클라우드 기반 에이전트 실행</li>
+            <li>코드 검사, 반복 작업 자동화 가능</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="img-wrapper">
+        <h2>* 최신 업데이트 관련 cursor setting <span style="font-size:0.8em; color:#333;">ver.25.06.15</span></h2>
+        <div class="img">
+            <img src="../images/image02.png" alt="">
+        </div>
+        <div class="img">
+            <img src="../images/image03.png" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧩 MCP(Magic Cursor Protocol) 가이드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common/css/style.css">
+    <link rel="stylesheet" href="common/css/reset.css">    
+    <script src="../common/js/common.js"></script>
+</head>
+<body class="page-mcp">
+    <div class="container">
+        <h1>🧩 MCP(Magic Cursor Protocol) 가이드</h1>
+        <div class="subtitle">Cursor AI의 <b>외부 데이터 연동</b> & Figma MCP 실전 설치법</div>
+
+        <div class="guide-section">
+            <h2>✅ MCP란?</h2>
+                <strong>MCP (Magic Cursor Protocol)</strong>
+                <p>Cursor AI에 외부 데이터(예: Figma 시안, 콘솔 오류 등)를 연결해 AI 정확도와 이해도를 높여주는 <b>확장 프로토콜</b></p>
+        </div>
+
+        <div class="guide-section">
+            <h2>🧩 MCP의 중요성</h2>
+                <ul>
+                    <li>일반 AI는 코드 외 정보는 인식 불가 →</li>
+                    <li><strong>MCP 사용 시</strong> 디자인 시안 기반 마크업, 오류 분석, 프로젝트 구조 인식 가능</li>
+                </ul>
+        </div>
+
+        <div class="guide-section">
+            <h2>⚙️ 추천 MCP 종류</h2>
+            <table class="info-table">
+                <thead>
+                    <tr><th>MCP 이름</th><th>기능 요약</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Figma Plugin MCP</td><td>Figma 시안 → 코드 생성 가능</td></tr>
+                    <tr><td>Browser Tools MCP</td><td>브라우저 오류 전달 → 디버깅 지원</td></tr>
+                    <tr><td>Project Context MCP</td><td>디렉토리/스타일 가이드 기억</td></tr>
+                    <tr><td>Sequential Thinking MCP</td><td>단계적 사고 유도</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="guide-section">
+            <h2>�� Figma Plugin MCP 설치 방법 <span style="font-size:0.95em; color:var(--secondary);">(Windows 기준)</span></h2>
+            <ol>
+                <li>
+                    <b>폴더 생성: 바탕화면에 <span class="label">cursor-plugin</span> 폴더 생성</b>
+                     <div class="img" style="width: 250px;">
+                        <img src="../images/image08.png" alt="">
+                    </div>
+                </li>
+                
+                
+                <li>                    
+                    <b>해당 플러그인 깃 다운로드:</b><br>
+                    <a href="https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp" target="_blank">https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp</a>
+                    <div class="img">
+                        <img src="../images/image09.png" alt="">
+                    </div>
+                </li>
+
+
+                <li>
+                    <b>PowerShell 열기 → 해당 폴더로 이동</b><br>
+                    <code>cd C:\Users\ELUO\Desktop\cursor-plugin<button class="copy-btn" aria-label="코드 복사">복사</button></code>
+                    <div class="img">
+                        <img src="../images/image10.png" alt="">
+                        <img src="../images/image11-01.png" alt="">
+                    </div>
+                </li>
+
+                
+                <li><b>Bun 설치</b><br>
+                    <code>irm bun.sh/install.ps1 | iex<button class="copy-btn" aria-label="코드 복사">복사</button></code>
+                    <div class="img">
+                        <img src="../images/image11-02.png" alt="">
+                    </div>
+                </li>
+                <li><b>src/socket.ts 파일에서<br>
+                    <span class="label">hostname: "0.0.0.0"</span> 주석 해제</b>
+                    <div class="img">
+                        <img src="../images/image13.png" alt="">
+                    </div>
+                </li>
+                <li><b>서버 실행</b><br>
+                    <span class="infos">(* 서버 실행이 안되어 있을 경우 mcp 연결이 안됩니다.)</span>
+                    <code>bun socket<button class="copy-btn" aria-label="코드 복사">복사</button></code>
+                    <div class="img">
+                        <img src="../images/image11-03.png" alt="">
+                    </div>
+                </li>
+                <li><b>Cursor 설정 파일 추가 (<span class="label">~/.cursor/mcp.json</span>)</b><br>
+                    <pre>
+    {
+        "mcpServers": {
+            "TalkToFigma": {
+            "command": "bunx",
+            "args": ["cursor-talk-to-figma-mcp@latest"]
+            }
+        }
+    }
+    <button class="copy-btn" aria-label="코드 복사">복사</button></pre>
+                    <div class="img">
+                        <img src="../images/image14.png" alt="">
+                        <img src="../images/image15.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b>피그마앱 접속</b><br>
+                    <span class="infos">(* web 피그마 링크 말고 피그마 파일을 다운로드 및 실행 필요<br>
+                    <a href="https://www.figma.com/ko-kr/downloads/" target="_blank">https://www.figma.com/ko-kr/downloads/</a>)</span>
+                    <div class="img">
+                        <img src="../images/image16.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b>피그마 MCP 적용할 프로젝트 열기</b>
+                    <div class="img">
+                        <img src="../images/image17.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b>상단 메뉴바 클릭 후 "플러그인 메뉴" 접속</b><br>
+                    <span class="infos">(* 플러그인 메뉴가 뜨지 않을 경우 권한 관련 설정 필요)</span>
+                    <div class="img">
+                        <img src="../images/image18.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b>플러그인 검색창에 "cursor talk to figma" 검색 후 클릭</b>
+                    <div class="img">
+                        <img src="../images/image19.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b>TalkToFigma 플러그인창의 Use localhost connect 클릭 후 채널코드 복사</b>
+                    <div class="img">
+                        <img src="../images/image20-01.png" alt="">
+                        <img src="../images/image20.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b>실행된 커서 창에 [Ctrl + i] Ask AI 창 열고<br>
+                    아래처럼 명령어 실행</b>
+                    <pre>
+피그마 채널 연결해줘 
+채널 코드 : (복사한 채널 코드 붙여넣기)
+    <button class="copy-btn" aria-label="코드 복사">복사</button>
+                    </pre>
+                    <div class="img">
+                        <img src="../images/image21.png" alt="">
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="guide-section">
+            <h2>🔎 Figma talk to figma 활용 방법</h2>
+
+        </div>
+
+
+        <div class="guide-section">
+            <h2>🔗 Figma 사용 권한 설정</h2>
+            <table class="info-table">
+                <thead>
+                    <tr><th>항목</th><th>필요 조건</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>API 접근</td><td>Personal Access Token 발급 (Figma &gt; Profile &gt; Settings)</td></tr>
+                    <tr><td>파일 권한</td><td>최소 "Anyone with the link → Can View"</td></tr>
+                    <tr><td>사용자 권한</td><td>최소 Editor 권한 필요</td></tr>
+                    <tr><td>조직 계정</td><td>관리자 설정에서 외부 API 허용 필요</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
